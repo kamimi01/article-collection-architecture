@@ -1,0 +1,156 @@
+openapi: 3.0.0
+info:
+  title: ArticleCollection App
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /api/v1/articles:
+    post:
+      tags:
+      - articles
+      summary: 記事情報を取得
+      operationId: apiV1ArticlesPOST
+      requestBody:
+        description: レビューの中身
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Request Body is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrResponses'
+        "415":
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrResponses'
+        "429":
+          description: Too Many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrResponses'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrResponses'
+      x-swagger-router-controller: Articles
+components:
+  schemas:
+    ErrResponses:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrResponses_errors'
+    body:
+      type: object
+      properties:
+        qiitaUserName:
+          type: string
+          example: kamimi01
+        noteUserName:
+          type: string
+          example: kamikami
+    inline_response_200:
+      type: object
+      properties:
+        articleContents:
+          type: array
+          items:
+            $ref: '#/components/schemas/inline_response_200_articleContents'
+      example:
+        articleContents:
+        - service: qiita
+          articles:
+          - title: clusterのリンクをまとめてみた
+            userName: kamimi01
+            numOfGood: 5
+            url: https://qiita.com/kamimi01
+          - title: clusterのリンクをまとめてみた
+            userName: kamimi01
+            numOfGood: 5
+            url: https://qiita.com/kamimi01
+        - service: qiita
+          articles:
+          - title: clusterのリンクをまとめてみた
+            userName: kamimi01
+            numOfGood: 5
+            url: https://qiita.com/kamimi01
+          - title: clusterのリンクをまとめてみた
+            userName: kamimi01
+            numOfGood: 5
+            url: https://qiita.com/kamimi01
+    ErrResponses_errors:
+      type: object
+      properties:
+        errcode:
+          type: string
+          description: エラーコード
+          example: ERR-01-a
+        message:
+          type: string
+          description: エラーメッセージ
+          example: パラメータが不足しています。
+    inline_response_200_articles:
+      type: object
+      properties:
+        title:
+          type: string
+          description: 記事タイトル
+          example: clusterのリンクをまとめてみた
+        userName:
+          type: string
+          description: ユーザ名
+          example: kamimi01
+        numOfGood:
+          type: integer
+          description: いいねやスキの数
+          example: 5
+        url:
+          type: string
+          description: 記事のURL
+          example: https://qiita.com/kamimi01
+      example:
+        title: clusterのリンクをまとめてみた
+        userName: kamimi01
+        numOfGood: 5
+        url: https://qiita.com/kamimi01
+    inline_response_200_articleContents:
+      type: object
+      properties:
+        service:
+          type: string
+          description: 記事のサービス名
+          example: qiita
+        articles:
+          type: array
+          items:
+            $ref: '#/components/schemas/inline_response_200_articles'
+      example:
+        service: qiita
+        articles:
+        - title: clusterのリンクをまとめてみた
+          userName: kamimi01
+          numOfGood: 5
+          url: https://qiita.com/kamimi01
+        - title: clusterのリンクをまとめてみた
+          userName: kamimi01
+          numOfGood: 5
+          url: https://qiita.com/kamimi01

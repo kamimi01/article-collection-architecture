@@ -84,29 +84,101 @@ paths:
                                   example: "https://qiita.com/kamimi01",
                                 }
         "400":
-          description: "Request Body is required"
+          description: "At least one prameter is required"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ErrResponses"
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          {
+                            type: string,
+                            description: "エラーのタイプ",
+                            example: "No_parameters",
+                          }
+                        message:
+                          {
+                            type: string,
+                            description: "エラーメッセージ",
+                            example: "At least one prameter is required",
+                          }
         "415":
           description: "Unsupported Media Type"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ErrResponses"
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          {
+                            type: string,
+                            description: "エラーのタイプ",
+                            example: "unsupported_content_type",
+                          }
+                        message:
+                          {
+                            type: string,
+                            description: "エラーメッセージ",
+                            example: "Unsupported Content-Type",
+                          }
         "429":
           description: "Too Many requests"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ErrResponses"
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          {
+                            type: string,
+                            description: "エラーのタイプ",
+                            example: "too_many_requests",
+                          }
+                        message:
+                          {
+                            type: string,
+                            description: "エラーメッセージ",
+                            example: "Too Many requests",
+                          }
         "500":
           description: "Internal Server Error"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ErrResponses"
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          {
+                            type: string,
+                            description: "エラーのタイプ",
+                            example: "internal_server_error",
+                          }
+                        message:
+                          {
+                            type: string,
+                            description: "エラーメッセージ",
+                            example: "Internal Server Error",
+                          }
 
 components:
   schemas:

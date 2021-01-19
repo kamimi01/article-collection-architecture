@@ -113,15 +113,15 @@ components:
           items:
             type: object
             properties:
-              errcode:
+              type:
                 {
                   type: string,
-                  description: "エラーコード",
-                  example: "ERR-01-a",
+                  description: "エラーのタイプ",
+                  example: "unsupported_content_type",
                 }
               message:
                 {
                   type: string,
                   description: "エラーメッセージ",
-                  example: "パラメータが不足しています。",
+                  example: "Unsupported Content-Type",
                 }

@@ -15,7 +15,7 @@
 * 現在のところAPIは1つのみ存在
 
 ### APIのIF仕様書
-* [こちら](https://kamimi01.github.io/article-collection-architecture/dist/index.html)のページで公開中
+* [こちら](https://kamimi01.github.io/article-collection-architecture/)のページで公開中
 
 ### API処理機能記述
 * PlantUMLでシーケンス図として作成した（非公開）
@@ -25,10 +25,12 @@
 2. `npm start`して、`http://localhost:8080/docs`にアクセスする
 
 ### APIドキュメントのモックサーバ再作成方法
-1. dockerコンテナを起動する
+1. swagger-editorのDockerイメージを取得する
+   `docker pull swaggerapi/swagger-editor`
+2. dockerコンテナを起動する
 
    `docker run -d -p 80:8080 swaggerapi/swagger-editor`
 
-1. `http://localhost`にブラウザでアクセスする
-2. `Generate Server`を押して、`nodejs-server`を選択する
-3. `open-api`のフォルダとして配置する# article-collection-architecture
+3. `http://localhost`にブラウザでアクセスする
+4. `Generate Server`を押して、`nodejs-server`を選択する
+5. `open-api`のフォルダとして配置する# article-collection-architecture

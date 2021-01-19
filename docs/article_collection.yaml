@@ -7,18 +7,23 @@ info:
 paths:
   "/api/v1/articles":
     post:
-      summary: "記事情報を取得"
+      summary: "記事情報取得"
       tags: ["articles"]
-      requestBody:
-        description: "レビューの中身"
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                qiitaUserName: { type: string, example: "kamimi01" }
-                noteUserName: { type: string, example: "kamikami" }
+      parameters:
+        - name: qiitaUserName
+          in: query
+          description: QiitaユーザID
+          required: false
+          schema:
+            type: string
+          example: "kamimi01"
+        - name: noteUserName
+          in: query
+          description: Noteユーザ名
+          required: false
+          schema:
+            type: string
+          example: "kamimi01"
       responses:
         "200":
           description: "Success"

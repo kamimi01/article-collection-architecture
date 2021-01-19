@@ -32,14 +32,13 @@
 
   <body>
     <div id="swagger-ui"></div>
-
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script>
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "../../architecture/article_collection.yaml",
+        url: "../article_collection.yaml",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [

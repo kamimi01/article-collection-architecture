@@ -15,7 +15,7 @@
 * 現在のところAPIは1つのみ存在
 
 ### APIのIF仕様書
-* [こちら]()のページで公開中
+* [こちら](https://kamimi01.github.io/article-collection-architecture/dist/index.html)のページで公開中
 
 ### API処理機能記述
 * PlantUMLでシーケンス図として作成した（非公開）

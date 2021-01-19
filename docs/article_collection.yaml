@@ -99,7 +99,7 @@ paths:
                           {
                             type: string,
                             description: "エラーのタイプ",
-                            example: "No_parameters",
+                            example: "no_parameters",
                           }
                         message:
                           {

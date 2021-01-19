@@ -6,7 +6,7 @@ info:
 
 paths:
   "/api/v1/articles":
-    post:
+    get:
       summary: "記事情報取得"
       tags: ["articles"]
       parameters:

@@ -2,41 +2,30 @@
 
 
 /**
- * 記事情報を取得
+ * 記事情報取得
  *
- * body Body レビューの中身
+ * qiitaUserName String QiitaユーザID (optional)
+ * noteUserName String Noteユーザ名 (optional)
  * returns inline_response_200
  **/
-exports.apiV1ArticlesPOST = function(body) {
+exports.apiV1ArticlesGET = function(qiitaUserName,noteUserName) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "articleContents" : [ {
+    "createdDate" : "2020-12-24T12:06:44+09:00",
     "service" : "qiita",
-    "articles" : [ {
-      "title" : "clusterのリンクをまとめてみた",
-      "userName" : "kamimi01",
-      "numOfGood" : 5,
-      "url" : "https://qiita.com/kamimi01"
-    }, {
-      "title" : "clusterのリンクをまとめてみた",
-      "userName" : "kamimi01",
-      "numOfGood" : 5,
-      "url" : "https://qiita.com/kamimi01"
-    } ]
+    "title" : "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた",
+    "userName" : "kamimi01",
+    "numOfGood" : 1,
+    "url" : "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864"
   }, {
+    "createdDate" : "2020-12-24T12:06:44+09:00",
     "service" : "qiita",
-    "articles" : [ {
-      "title" : "clusterのリンクをまとめてみた",
-      "userName" : "kamimi01",
-      "numOfGood" : 5,
-      "url" : "https://qiita.com/kamimi01"
-    }, {
-      "title" : "clusterのリンクをまとめてみた",
-      "userName" : "kamimi01",
-      "numOfGood" : 5,
-      "url" : "https://qiita.com/kamimi01"
-    } ]
+    "title" : "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた",
+    "userName" : "kamimi01",
+    "numOfGood" : 1,
+    "url" : "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864"
   } ]
 };
     if (Object.keys(examples).length > 0) {

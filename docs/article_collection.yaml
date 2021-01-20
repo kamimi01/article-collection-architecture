@@ -78,7 +78,7 @@ paths:
                             description: "記事のURL",
                             example: "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864",
                           }
-                        createdAt:
+                        createdDate:
                           {
                             type: string,
                             description: 記事の作成日時,

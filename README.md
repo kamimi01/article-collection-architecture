@@ -26,11 +26,13 @@
 
 ### APIドキュメントのモックサーバ再作成方法
 1. swagger-editorのDockerイメージを取得する
+   
    `docker pull swaggerapi/swagger-editor`
+
 2. dockerコンテナを起動する
 
    `docker run -d -p 80:8080 swaggerapi/swagger-editor`
 
 3. `http://localhost`にブラウザでアクセスする
 4. `Generate Server`を押して、`nodejs-server`を選択する
-5. `open-api`のフォルダとして配置する# article-collection-architecture
+5. `open-api`のフォルダとして配置する

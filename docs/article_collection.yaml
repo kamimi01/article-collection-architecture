@@ -58,7 +58,7 @@ paths:
                           {
                             type: string,
                             description: "記事タイトル",
-                            example: "clusterのリンクをまとめてみた",
+                            example: "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた",
                           }
                         userName:
                           {
@@ -70,13 +70,13 @@ paths:
                           {
                             type: integer,
                             description: "いいねやスキの数",
-                            example: 5,
+                            example: 1,
                           }
                         url:
                           {
                             type: string,
                             description: "記事のURL",
-                            example: "https://qiita.com/kamimi01",
+                            example: "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864",
                           }
                         createdAt:
                           {

@@ -54,35 +54,37 @@ paths:
                             description: "記事のサービス名",
                             example: "qiita",
                           }
-                        articles:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              title:
-                                {
-                                  type: string,
-                                  description: "記事タイトル",
-                                  example: "clusterのリンクをまとめてみた",
-                                }
-                              userName:
-                                {
-                                  type: string,
-                                  description: "ユーザ名",
-                                  example: "kamimi01",
-                                }
-                              numOfGood:
-                                {
-                                  type: integer,
-                                  description: "いいねやスキの数",
-                                  example: 5,
-                                }
-                              url:
-                                {
-                                  type: string,
-                                  description: "記事のURL",
-                                  example: "https://qiita.com/kamimi01",
-                                }
+                        title:
+                          {
+                            type: string,
+                            description: "記事タイトル",
+                            example: "clusterのリンクをまとめてみた",
+                          }
+                        userName:
+                          {
+                            type: string,
+                            description: "ユーザ名",
+                            example: "kamimi01",
+                          }
+                        numOfGood:
+                          {
+                            type: integer,
+                            description: "いいねやスキの数",
+                            example: 5,
+                          }
+                        url:
+                          {
+                            type: string,
+                            description: "記事のURL",
+                            example: "https://qiita.com/kamimi01",
+                          }
+                        createdAt:
+                          {
+                            type: string,
+                            description: 記事の作成日時,
+                            example: "2020-12-24T12:06:44+09:00" 
+                          }
+                              
         "400":
           description: "At least one prameter is required"
           content:

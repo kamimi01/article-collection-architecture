@@ -18,6 +18,7 @@ exports.apiV1ArticlesGET = function(qiitaUserName,noteUserName) {
     "title" : "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた",
     "userName" : "kamimi01",
     "numOfGood" : 1,
+    "profileImageUrl" : "https://avatars1.githubusercontent.com/u/47489629?v=4",
     "url" : "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864"
   }, {
     "createdDate" : "2020-12-24T12:06:44+09:00",
@@ -25,6 +26,7 @@ exports.apiV1ArticlesGET = function(qiitaUserName,noteUserName) {
     "title" : "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた",
     "userName" : "kamimi01",
     "numOfGood" : 1,
+    "profileImageUrl" : "https://avatars1.githubusercontent.com/u/47489629?v=4",
     "url" : "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864"
   } ]
 };

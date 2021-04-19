@@ -72,6 +72,12 @@ paths:
                             description: "いいねやスキの数",
                             example: 1,
                           }
+                        profileImageUrl:
+                          {
+                            type: string,
+                            description: "プロフィール画像",
+                            example: "https://avatars1.githubusercontent.com/u/47489629?v=4"
+                          }
                         url:
                           {
                             type: string,

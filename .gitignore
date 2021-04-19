@@ -3,3 +3,4 @@ assets/article_info_get_api.png
 architecture/articleList.puml
 # Swagger UI用のフォルダ（ReDocに変更したため、gitignore）
 docs_swagger_ui/
+open-api/node_modules/

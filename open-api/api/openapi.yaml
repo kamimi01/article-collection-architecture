@@ -100,12 +100,14 @@ components:
           title: 色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた
           userName: kamimi01
           numOfGood: 1
+          profileImageUrl: https://avatars1.githubusercontent.com/u/47489629?v=4
           url: https://qiita.com/kamimi01/items/353ed9502ed62cbe9864
         - createdDate: 2020-12-24T12:06:44+09:00
           service: qiita
           title: 色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた
           userName: kamimi01
           numOfGood: 1
+          profileImageUrl: https://avatars1.githubusercontent.com/u/47489629?v=4
           url: https://qiita.com/kamimi01/items/353ed9502ed62cbe9864
     inline_response_400:
       type: object
@@ -165,6 +167,10 @@ components:
           type: integer
           description: いいねやスキの数
           example: 1
+        profileImageUrl:
+          type: string
+          description: プロフィール画像
+          example: https://avatars1.githubusercontent.com/u/47489629?v=4
         url:
           type: string
           description: 記事のURL
@@ -179,6 +185,7 @@ components:
         title: 色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた
         userName: kamimi01
         numOfGood: 1
+        profileImageUrl: https://avatars1.githubusercontent.com/u/47489629?v=4
         url: https://qiita.com/kamimi01/items/353ed9502ed62cbe9864
     inline_response_400_errors:
       type: object

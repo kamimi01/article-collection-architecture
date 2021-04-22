@@ -1,0 +1,50 @@
+@startuml
+
+hide footbox
+title 記事取得API処理機能記述
+
+クライアント -> ArticleContentsAPI: APIを呼び出す
+note left
+  メソッド：POST
+  エンドポイント：/api/v1/articles
+  リクエストボディ（いづれか1項目は必須）
+  * qiitaUserName：QiitaのユーザID
+  * noteUserName：Noteのユーザ名
+end note
+
+activate ArticleContentsAPI
+
+ArticleContentsAPI -> QiitaのAPI: APIを呼び出す
+activate QiitaのAPI
+note right
+  メソッド：GET
+  エンドポイント：https://qiita.com/api/v2/users/:user_id/items
+  パラメータ：
+  * user_id：QiitaのユーザID
+end note
+QiitaのAPI --> ArticleContentsAPI: レスポンスを返却
+deactivate QiitaのAPI
+
+alt レスポンスが200 OKと404 Not foundの場合
+  ArticleContentsAPI -> ArticleContentsAPI: レスポンスに記事情報を格納する
+else レスポンスが200と404以外の場合
+  ArticleContentsAPI -> ArticleContentsAPI: レスポンスにエラーメッセージを格納する
+  alt レスポンスが403 Forbiddenの場合
+    ArticleContentsAPI -> ArticleContentsAPI: 
+end
+
+ArticleContentsAPI -> NoteのAPI: APIを呼び出す
+activate NoteのAPI
+NoteのAPI --> ArticleContentsAPI: あるユーザのQiita記事を返却
+deactivate NoteのAPI
+
+alt レスポンスが200の場合
+  ArticleContentsAPI -> ArticleContentsAPI: レスポンスに記事数と記事を格納する
+else レスポンスが200以外の場合
+  ArticleContentsAPI -> ArticleContentsAPI: レスポンスにエラーメッセージを格納する
+end
+
+ArticleContentsAPI --> クライアント: 記事情報のレスポンスを返す
+deactivate ArticleContentsAPI
+
+@enduml

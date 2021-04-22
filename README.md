@@ -18,7 +18,9 @@
 * [こちら](https://kamimi01.github.io/article-collection-architecture/)のページで公開中
 
 ### API処理機能記述
-* PlantUMLでシーケンス図として作成した（非公開）
+* PlantUMLでシーケンス図として作成した
+
+![](./assets/article_info_get_api.png)
 
 ### モックサーバの起動方法
 1. `open-api`のフォルダで、`npm install`する

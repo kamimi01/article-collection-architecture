@@ -98,23 +98,18 @@ paths:
               schema:
                 type: object
                 properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        type:
-                          {
-                            type: string,
-                            description: "エラーのタイプ",
-                            example: "no_parameters",
-                          }
-                        message:
-                          {
-                            type: string,
-                            description: "エラーメッセージ",
-                            example: "At least one prameter is required",
-                          }
+                  message:
+                    {
+                      type: string,
+                      description: "エラーメッセージ",
+                      example: "At least one prameter is required",
+                    }                
+                  type:
+                    {
+                      type: string,
+                      description: "エラーのタイプ",
+                      example: "no_parameters",
+                    }
         "415":
           description: "Unsupported Media Type"
           content:
@@ -122,23 +117,18 @@ paths:
               schema:
                 type: object
                 properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        type:
-                          {
-                            type: string,
-                            description: "エラーのタイプ",
-                            example: "unsupported_content_type",
-                          }
-                        message:
-                          {
-                            type: string,
-                            description: "エラーメッセージ",
-                            example: "Unsupported Content-Type",
-                          }
+                  message:
+                    {
+                      type: string,
+                      description: "エラーメッセージ",
+                      example: "Unsupported Content-Type",
+                    }                
+                  type:
+                    {
+                      type: string,
+                      description: "エラーのタイプ",
+                      example: "unsupported_content_type",
+                    }
         "429":
           description: "Too Many requests"
           content:
@@ -146,67 +136,35 @@ paths:
               schema:
                 type: object
                 properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        type:
-                          {
-                            type: string,
-                            description: "エラーのタイプ",
-                            example: "too_many_requests",
-                          }
-                        message:
-                          {
-                            type: string,
-                            description: "エラーメッセージ",
-                            example: "Too Many requests",
-                          }
+                  message:
+                    {
+                      type: string,
+                      description: "エラーメッセージ",
+                      example: "Too Many requests",
+                    }
+                  type:
+                    {
+                      type: string,
+                      description: "エラーのタイプ",
+                      example: "too_many_requests",
+                    }   
         "500":
           description: "Internal Server Error"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        type:
-                          {
-                            type: string,
-                            description: "エラーのタイプ",
-                            example: "internal_server_error",
-                          }
-                        message:
-                          {
-                            type: string,
-                            description: "エラーメッセージ",
-                            example: "Internal Server Error",
-                          }
 
 components:
   schemas:
     ErrResponses:
       type: object
       properties:
-        errors:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                {
-                  type: string,
-                  description: "エラーのタイプ",
-                  example: "unsupported_content_type",
-                }
-              message:
-                {
-                  type: string,
-                  description: "エラーメッセージ",
-                  example: "Unsupported Content-Type",
-                }
+        message:
+          {
+            type: string,
+            description: "エラーメッセージ",
+            example: "Unsupported Content-Type",
+          }
+        type:
+          {
+            type: string,
+            description: "エラーのタイプ",
+            example: "unsupported_content_type",
+          }

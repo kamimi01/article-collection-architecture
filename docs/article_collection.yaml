@@ -111,17 +111,6 @@ paths:
                     }
         "403":
           description: "Forbidden"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    {
-                      type: string,
-                      description: "API Gatewayからのエラーメッセージ",
-                      example: "Forbidden"
-                    }
         "415":
           description: "Unsupported Media Type"
           content:

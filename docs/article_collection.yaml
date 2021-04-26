@@ -16,16 +16,9 @@ paths:
           schema:
             type: string
           example: "api-key"
-        - name: qiitaUserName
+        - name: userName
           in: query
           description: QiitaユーザID
-          required: false
-          schema:
-            type: string
-          example: "kamimi01"
-        - name: noteUserName
-          in: query
-          description: Noteユーザ名
           required: false
           schema:
             type: string

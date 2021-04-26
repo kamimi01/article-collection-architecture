@@ -65,7 +65,7 @@ paths:
                             description: "ユーザ名",
                             example: "kamimi01",
                           }
-                        numOfGood:
+                        likesCount:
                           {
                             type: integer,
                             description: "いいねやスキの数",

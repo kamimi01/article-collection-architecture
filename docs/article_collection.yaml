@@ -10,6 +10,12 @@ paths:
       summary: "記事情報取得"
       tags: ["articles"]
       parameters:
+        - name: X-Api-Key
+          in: header
+          required: true
+          schema:
+            type: string
+          example: "api-key"
         - name: qiitaUserName
           in: query
           description: QiitaユーザID
